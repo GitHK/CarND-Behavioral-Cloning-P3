@@ -1,0 +1,5 @@
+*.pyc
+/.idea
+/remote/final*
+/remote/model*
+/remote/loss_diagram.png
