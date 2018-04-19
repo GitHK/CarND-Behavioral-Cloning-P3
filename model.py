@@ -80,21 +80,21 @@ def make_model():
     model.add(Cropping2D(cropping=((50, 20), (0, 0)), input_shape=(3, 160, 320)))
 
     model.add(Convolution2D(24, 5, 5, subsample=(2, 2), activation="relu"))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.2))
     model.add(Convolution2D(36, 5, 5, subsample=(2, 2), activation="relu"))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.2))
     model.add(Convolution2D(48, 5, 5, subsample=(2, 2), activation="relu"))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.2))
     model.add(Convolution2D(64, 3, 3, activation="relu"))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.2))
     model.add(Convolution2D(64, 3, 3, activation="relu"))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.2))
     model.add(Convolution2D(128, 3, 3, activation="relu"))
     model.add(Flatten())
-    model.add(Dense(100))
-    model.add(Dense(50))
-    model.add(Dense(10))
-    model.add(Dense(1))
+    model.add(Dense(100, activation='tanh'))
+    model.add(Dense(50, activation='tanh'))
+    model.add(Dense(10, activation='tanh'))
+    model.add(Dense(1, activation='tanh'))
 
     model.compile(loss='mse', optimizer='adam')
 
@@ -116,10 +116,10 @@ def save_training_validation_loss(history_object, diagram_file_name, results_dir
 def train_from_scratch(data_dir, batch_size, test_size, diagram_file_name, results_dir, model_creator,
                        steering_correction, epochs):
     """
-    Will train the NNet from zero with provided data. Store a model when is done and output a result
-    :param data_dir: directory containing the acquire data
+    Will train the NNet from zero with provided csv_images. Store a model when is done and output a result
+    :param data_dir: directory containing the acquire csv_images
     :param batch_size: how many images should be loaded in a generator call
-    :param test_size: percentage split between test and validation data
+    :param test_size: percentage split between test and validation csv_images
     :param diagram_file_name: output image diagram file
     :param results_dir: directory where to store results, model and loss diagram
     :param model_creator: function creating returning a NNet to use
@@ -163,11 +163,11 @@ def main():
     further infromation.
     """
     train_from_scratch(
-        data_dir='./final/',
+        data_dir='./few/',
         batch_size=32,
         test_size=0.2,
         diagram_file_name='loss_diagram.png',
-        results_dir='./final/',
+        results_dir='./few/',
         model_creator=make_model,
         steering_correction=0.3,
         epochs=3
@@ -181,4 +181,4 @@ def show_summary():
 
 
 if __name__ == '__main__':
-    main()
+    show_summary()

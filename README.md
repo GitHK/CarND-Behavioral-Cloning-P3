@@ -8,7 +8,7 @@ This repository contains starting files for the Behavioral Cloning Project.
 
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to clone driving behavior. You will train, validate and test a model using Keras. The model will output a steering angle to an autonomous vehicle.
 
-We have provided a simulator where you can steer a car around a track for data collection. You'll use image data and steering angles to train a neural network and then use this model to drive the car autonomously around the track.
+We have provided a simulator where you can steer a car around a track for csv_images collection. You'll use image csv_images and steering angles to train a neural network and then use this model to drive the car autonomously around the track.
 
 We also want you to create a detailed writeup of the project. Check out the [writeup template](https://github.com/udacity/CarND-Behavioral-Cloning-P3/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup. The writeup can be either a markdown file or a pdf document.
 
@@ -32,8 +32,8 @@ You're not required to use markdown for your writeup.  If you use another method
 The Project
 ---
 The goals / steps of this project are the following:
-* Use the simulator to collect data of good driving behavior 
-* Design, train and validate a model that predicts a steering angle from image data
+* Use the simulator to collect csv_images of good driving behavior
+* Design, train and validate a model that predicts a steering angle from image csv_images
 * Use the model to drive the vehicle autonomously around the first track in the simulator. The vehicle should remain on the road for an entire loop around the track.
 * Summarize the results with a written report
 
@@ -49,7 +49,7 @@ The following resources can be found in this github repository:
 * video.py
 * writeup_template.md
 
-The simulator can be downloaded from the classroom. In the classroom, we have also provided sample data that you can optionally use to help train your model.
+The simulator can be downloaded from the classroom. In the classroom, we have also provided sample csv_images that you can optionally use to help train your model.
 
 ## Details About Files In This Directory
 
